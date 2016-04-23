@@ -1,4 +1,4 @@
-package com.github;
+package com.github.jinsen47;
 
 import com.github.jinsen47.model.ListNode;
 import com.github.jinsen47.utils.ArrayUtils;
