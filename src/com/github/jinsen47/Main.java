@@ -4,24 +4,23 @@ public class Main{
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNextInt()) {
-            int n = in.nextInt();
-            int m = in.nextInt();
-            int k = in.nextInt();
-            solution(n, m, k);
+            int t = in.nextInt();
+            List<Boolean> results = new ArrayList<>();
+            for (int i = 0; i < t; i++) {
+                boolean result = solution(in.nextInt(), in.nextInt(), in.nextInt());
+                results.add(result);
+            }
+            for (int i = 0; i < results.size(); i++) {
+                boolean b = results.get(i);
+                System.out.println(String.format("Case #%d: ", i+1) + b);
+            }
         }
     }
 
-    public static void solution(int n, int m, int k) {
-        long[] array = new long[n * m];
-        for (long i = 0; i < n; i++) {
-            for (long j = 0; j < m; j++) {
-                long val = (i+1) * (j+1);
-                long index = m * i + j;
-                array[((int) index)] = val;
-            }
-        }
-        Arrays.sort(array);
-        System.out.println(array[k - 1]);
-
+    public static boolean solution(int a, int b, int c) {
+        long aLong = a;
+        long bLong = b;
+        long cLong = c;
+        return aLong + bLong > cLong;
     }
 }
