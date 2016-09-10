@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class GetLeastNumbers {
     public static ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
         ArrayList<Integer> outList = new ArrayList<>();
-        if (input.length == 0 || k <= 0) {
+        if (input.length == 0 || k <= 0 || k > input.length) {
             return outList;
         }
         if (input.length <= k) {
@@ -56,6 +56,6 @@ public class GetLeastNumbers {
     }
 
     public static void main(String[] args) {
-        ArrayUtils.printArray(GetLeastNumbers_Solution(new int[]{4,5,1,6,2,7,3,8}, 10));
+        ArrayUtils.printArray(GetLeastNumbers_Solution(new int[]{4,5,1,6,2,7,3,8}, 4));
     }
 }

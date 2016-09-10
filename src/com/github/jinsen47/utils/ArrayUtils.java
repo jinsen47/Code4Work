@@ -2,9 +2,8 @@ package com.github.jinsen47.utils;
 
 import com.github.jinsen47.model.ListNode;
 
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Jinsen on 15/11/6.
@@ -19,6 +18,13 @@ public class ArrayUtils {
 
     public static void printArray(int[] array) {
         for (int i : array) {
+            System.out.print(i + "\t");
+        }
+        System.out.println();
+    }
+
+    public static void printArray(long[] array) {
+        for (long i : array) {
             System.out.print(i + "\t");
         }
         System.out.println();
