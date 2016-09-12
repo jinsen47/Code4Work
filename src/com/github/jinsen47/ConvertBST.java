@@ -4,6 +4,7 @@ import com.github.jinsen47.model.TreeNode;
 
 /**
  * Created by Jinsen on 16/4/12.
+ * 二叉树转换成有序双向链表
  */
 public class ConvertBST {
     public static TreeNode convertBST(TreeNode root) {
