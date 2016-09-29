@@ -2,7 +2,6 @@ package com.github.jinsen47.utils;
 
 import com.github.jinsen47.model.ListNode;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -67,6 +66,31 @@ public class ArrayUtils {
                 if (array[j-1] > array[j]) {
                     swap(array, j-1, j);
                 }
+            }
+        }
+    }
+
+    public static void heapSort(int[] array) {
+        for(int i = array.length / 2 - 1; i >= 0; i--) {
+            heapDown(array, i, array.length - 1);
+        }
+        for (int i = array.length - 1; i > 0; i--) {
+            swap(array, 0, i);
+            heapDown(array, 0, i - 1);
+        }
+    }
+
+    public static void heapDown(int[] array, int start, int end) {
+        int temp = array[start];
+        for (int c = start, l = 2 * c + 1; l <= end; c = l, l = 2*l+1) {
+            if (l < end && array[l] < array[l+1]) {
+                l++;                                   // 左右节点选大的
+            }
+            if (temp >= array[l]) {
+                break;                                 // 调整结束
+            } else {
+                array[c] = array[l];
+                array[l] = temp;
             }
         }
     }
@@ -146,9 +170,10 @@ public class ArrayUtils {
         int[] array = {2,8,7,1,3,5,6,4};
 //        bubbleSort(array);
 //        selectionSort(array);
-        insertSort(array);
-        printArray(array);
-        reverse(array);
+//        insertSort(array);
+//        printArray(array);
+//        reverse(array);
+        heapSort(array);
         printArray(array);
     }
 

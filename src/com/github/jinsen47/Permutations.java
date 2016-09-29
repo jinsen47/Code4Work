@@ -1,9 +1,8 @@
 package com.github.jinsen47;
 
-import com.github.jinsen47.utils.ArrayUtils;
-
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -16,6 +15,8 @@ public class Permutations {
         char[] sourceList = source.toCharArray();
         Arrays.sort(sourceList);
         permutationCore(sourceList, 0, outList);
+        HashMap<Integer, Integer> map = new HashMap<>();
+
         return outList;
     }
 
